@@ -9,14 +9,8 @@ const text = document.querySelector('.text')
 const retry = document.querySelector('.retry')
 let computerScore =0;
 let userScore=0;
-
-
 let userScoreElement = document.querySelector('.computer').innerHTML = userScore
 let computerScoreElement = document.querySelector('.user').innerHTML = computerScore
-
-
-
-
 let computerChoice = elements[Math.round(Math.random() *2)];
 let userChoice = ''
 
@@ -30,9 +24,14 @@ function replay(){
     computerScore =0;
     userScore=0;
     text.innerHTML=''
+    rounds =0;
     points.innerHTML = rounds
+    userScoreElement = document.querySelector('.user').innerHTML = userScore
+    computerScoreElement = document.querySelector('.computer').innerHTML = computerScore
     document.querySelector('.retry').classList.add('hidden')
     document.querySelector('.retry').classList.remove('display')
+    document.querySelector('.try-again').classList.add('hidden');
+    document.querySelector('.try-again').classList.remove('display');
 }
 
 
@@ -66,6 +65,12 @@ function replay(){
         points.innerHTML = rounds
         userScoreElement = document.querySelector('.user').innerHTML = userScore
         computerScoreElement = document.querySelector('.computer').innerHTML = computerScore
+        if(computerScore === 5 || userScore === 5){
+            document.querySelector('.try-again').classList.remove('hidden');
+            document.querySelector('.try-again').classList.add('display');
+            document.querySelector('.retry').classList.remove('hidden');
+            document.querySelector('.retry').classList.add('display');
+        }
     })
 
     // paper
@@ -94,6 +99,12 @@ function replay(){
         points.innerHTML = rounds
         userScoreElement = document.querySelector('.user').innerHTML = userScore
         computerScoreElement = document.querySelector('.computer').innerHTML = computerScore
+        if(computerScore === 5 || userScore === 5){
+            document.querySelector('.try-again').classList.remove('hidden');
+            document.querySelector('.try-again').classList.add('display');
+            document.querySelector('.retry').classList.remove('hidden');
+            document.querySelector('.retry').classList.add('display');
+        }
         
     })
 
@@ -123,8 +134,13 @@ function replay(){
        points.innerHTML = rounds
        userScoreElement = document.querySelector('.user').innerHTML = userScore
        computerScoreElement = document.querySelector('.computer').innerHTML = computerScore
+       if(computerScore === 5 || userScore === 5){
+        document.querySelector('.try-again').classList.remove('hidden');
+        document.querySelector('.try-again').classList.add('display');
+        document.querySelector('.retry').classList.remove('hidden');
+        document.querySelector('.retry').classList.add('display');
+    }
     })
-
 
 
 
